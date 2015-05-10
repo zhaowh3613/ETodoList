@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */; };
 		CFDC58BF1AFDADCC006D2D4F /* ETodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58BD1AFDADCC006D2D4F /* ETodoList.xcdatamodeld */; };
-		CFDC58C11AFDADCC006D2D4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58C01AFDADCC006D2D4F /* ViewController.swift */; };
+		CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */; };
 		CFDC58C41AFDADCC006D2D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDC58C21AFDADCC006D2D4F /* Main.storyboard */; };
 		CFDC58C61AFDADCC006D2D4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDC58C51AFDADCC006D2D4F /* Images.xcassets */; };
 		CFDC58C91AFDADCC006D2D4F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDC58C71AFDADCC006D2D4F /* LaunchScreen.xib */; };
 		CFDC58D51AFDADCC006D2D4F /* ETodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58D41AFDADCC006D2D4F /* ETodoListTests.swift */; };
+		CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,14 @@
 		CFDC58BA1AFDADCC006D2D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFDC58BE1AFDADCC006D2D4F /* ETodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETodoList.xcdatamodel; sourceTree = "<group>"; };
-		CFDC58C01AFDADCC006D2D4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETodoListViewController.swift; sourceTree = "<group>"; };
 		CFDC58C31AFDADCC006D2D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFDC58C51AFDADCC006D2D4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFDC58C81AFDADCC006D2D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CFDC58CE1AFDADCC006D2D4F /* ETodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDC58D31AFDADCC006D2D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFDC58D41AFDADCC006D2D4F /* ETodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETodoListTests.swift; sourceTree = "<group>"; };
+		CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		CFDC58B81AFDADCC006D2D4F /* ETodoList */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC58DF1AFEDF3D006D2D4F /* Models */,
 				CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */,
-				CFDC58C01AFDADCC006D2D4F /* ViewController.swift */,
+				CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */,
 				CFDC58C21AFDADCC006D2D4F /* Main.storyboard */,
 				CFDC58C51AFDADCC006D2D4F /* Images.xcassets */,
 				CFDC58C71AFDADCC006D2D4F /* LaunchScreen.xib */,
@@ -113,6 +116,14 @@
 				CFDC58D31AFDADCC006D2D4F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFDC58DF1AFEDF3D006D2D4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFDC58C11AFDADCC006D2D4F /* ViewController.swift in Sources */,
+				CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */,
+				CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */,
 				CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */,
 				CFDC58BF1AFDADCC006D2D4F /* ETodoList.xcdatamodeld in Sources */,
 			);

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ETodoList/ETodoListViewController.swift"
+            timestampString = "452916365.649229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ETodoListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETodoList.ETodoListViewController.items.setter : Swift.Array&lt;ETodoList.TodolistItem&gt;"
+                  moduleName = "ETodoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wenhuizhao/Documents/work%20space%20swift/ETodoList/ETodoList/ETodoListViewController.swift"
+                  timestampString = "452918528.631508"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETodoList.ETodoListViewController.init (ETodoList.ETodoListViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ETodoList.ETodoListViewController"
+                  moduleName = "ETodoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wenhuizhao/Documents/work%20space%20swift/ETodoList/ETodoList/ETodoListViewController.swift"
+                  timestampString = "452918528.631715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETodoList.ETodoListViewController.items.materializeForSet : Swift.Array&lt;ETodoList.TodolistItem&gt;"
+                  moduleName = "ETodoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wenhuizhao/Documents/work%20space%20swift/ETodoList/ETodoList/ETodoListViewController.swift"
+                  timestampString = "452918528.631943"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
