@@ -15,6 +15,7 @@
 		CFDC58C91AFDADCC006D2D4F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDC58C71AFDADCC006D2D4F /* LaunchScreen.xib */; };
 		CFDC58D51AFDADCC006D2D4F /* ETodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58D41AFDADCC006D2D4F /* ETodoListTests.swift */; };
 		CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */; };
+		CFDC58E41AFF5EDF006D2D4F /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58E31AFF5EDF006D2D4F /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		CFDC58D31AFDADCC006D2D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFDC58D41AFDADCC006D2D4F /* ETodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETodoListTests.swift; sourceTree = "<group>"; };
 		CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
+		CFDC58E31AFF5EDF006D2D4F /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		CFDC58B81AFDADCC006D2D4F /* ETodoList */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC58E21AFF5E9D006D2D4F /* ViewControllers */,
 				CFDC58DF1AFEDF3D006D2D4F /* Models */,
 				CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */,
 				CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */,
@@ -124,6 +127,14 @@
 				CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CFDC58E21AFF5E9D006D2D4F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC58E31AFF5EDF006D2D4F /* AddItemViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDC58E41AFF5EDF006D2D4F /* AddItemViewController.swift in Sources */,
 				CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */,
 				CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */,
 				CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */,
