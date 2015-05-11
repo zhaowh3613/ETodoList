@@ -8,9 +8,25 @@
 
 import UIKit
 
-class ETodoListViewController: UITableViewController {
+class ETodoListViewController: UITableViewController, AddItemViewControllerDelegate {
 
     var items = [TodolistItem]()
+    
+    func addItemViewControllerDidCancel(controller: AddItemViewController){
+    
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: TodolistItem){
+    
+        let newIndex = items.count
+        items.append(item)
+        let indexPath = NSIndexPath(forRow: newIndex, inSection: 0)
+        var indexPaths = [indexPath]
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+    
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     required init(coder aDecoder: NSCoder){
     
@@ -86,5 +102,18 @@ class ETodoListViewController: UITableViewController {
         
     }
     
+    /*1. Because there may be more than one segue per view controller, it’s a good idea to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue. Swift’s == comparison operator does not work on just numbers but also on strings and most other types of objects.
+    2. The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it. So first you get ahold of this UINavigationController object.
+    3. To find the AddItemViewController, you can look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.
+    4. Once you have a reference to the AddItemViewController object, you set its delegate property to self and the connection is complete. Note that “self” here refers to the ChecklistViewController.*/
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if segue.identifier == "AddItemSegue"{
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let controller = navigationController.topViewController as! AddItemViewController
+        controller.delegate = self
+        
+        }
+    
+    }
 }
 
