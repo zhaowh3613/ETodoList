@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF9599191B775AB8004F1F13 /* AllListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */; };
+		CF95991B1B7A4426004F1F13 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95991A1B7A4426004F1F13 /* DataModel.swift */; };
+		CFD8C7B71B1605C000D6D047 /* AllTodoListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */; };
+		CFD8C7B91B16A33200D6D047 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8C7B81B16A33200D6D047 /* TodoList.swift */; };
 		CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */; };
 		CFDC58BF1AFDADCC006D2D4F /* ETodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58BD1AFDADCC006D2D4F /* ETodoList.xcdatamodeld */; };
 		CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListDetailViewController.swift; sourceTree = "<group>"; };
+		CF95991A1B7A4426004F1F13 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTodoListsViewController.swift; sourceTree = "<group>"; };
+		CFD8C7B81B16A33200D6D047 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		CFDC58B61AFDADCC006D2D4F /* ETodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDC58BA1AFDADCC006D2D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +94,6 @@
 				CFDC58E21AFF5E9D006D2D4F /* ViewControllers */,
 				CFDC58DF1AFEDF3D006D2D4F /* Models */,
 				CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */,
-				CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */,
 				CFDC58C21AFDADCC006D2D4F /* Main.storyboard */,
 				CFDC58C51AFDADCC006D2D4F /* Images.xcassets */,
 				CFDC58C71AFDADCC006D2D4F /* LaunchScreen.xib */,
@@ -125,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				CFDC58E01AFEDF75006D2D4F /* TodoListItem.swift */,
+				CFD8C7B81B16A33200D6D047 /* TodoList.swift */,
+				CF95991A1B7A4426004F1F13 /* DataModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -132,7 +141,10 @@
 		CFDC58E21AFF5E9D006D2D4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC58C01AFDADCC006D2D4F /* ETodoListViewController.swift */,
 				CFDC58E31AFF5EDF006D2D4F /* AddItemViewController.swift */,
+				CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */,
+				CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -237,11 +249,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD8C7B71B1605C000D6D047 /* AllTodoListsViewController.swift in Sources */,
+				CF9599191B775AB8004F1F13 /* AllListDetailViewController.swift in Sources */,
+				CFD8C7B91B16A33200D6D047 /* TodoList.swift in Sources */,
 				CFDC58E41AFF5EDF006D2D4F /* AddItemViewController.swift in Sources */,
 				CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */,
 				CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */,
 				CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */,
 				CFDC58BF1AFDADCC006D2D4F /* ETodoList.xcdatamodeld in Sources */,
+				CF95991B1B7A4426004F1F13 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +455,7 @@
 				CFDC58DA1AFDADCC006D2D4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFDC58DB1AFDADCC006D2D4F /* Build configuration list for PBXNativeTarget "ETodoListTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +464,7 @@
 				CFDC58DD1AFDADCC006D2D4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

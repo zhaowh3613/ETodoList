@@ -13,6 +13,8 @@ protocol AddItemViewControllerDelegate: class{
    func addItemViewControllerDidCancel(controller: AddItemViewController)
 
    func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: TodolistItem)
+    
+   func addItemViewController(controller: AddItemViewController, didFinishEditingItem item: TodolistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -21,6 +23,18 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     
+    var itemEdit: TodolistItem?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Do any additional setup after loading the view, typically from a nib.
+        if let item = itemEdit{        
+            title = "EditItem"
+            textField.text = item.title
+            doneButton.enabled = true;
+        }
+    }
     
     
     @IBAction func cancelSave(sender: UIButton) {
@@ -29,10 +43,14 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func SaveItem(sender: UIButton) {
-
-        var newItem = TodolistItem(title: textField.text, isChecked: false)
-        delegate?.addItemViewController(self, didFinishAddingItem: newItem)
-        dismissViewControllerAnimated(true, completion: nil)
+        if let item = itemEdit {
+            item.title = textField.text
+            delegate?.addItemViewController(self, didFinishEditingItem: item)
+        } else {
+            var newItem = TodolistItem(title: textField.text, isChecked: false)
+            delegate?.addItemViewController(self, didFinishAddingItem: newItem)
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     @IBAction func keyDone(sender: UITextField) {
@@ -56,13 +74,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
         let oldText: NSString = textField.text
         let newText: NSString = oldText.stringByReplacingCharactersInRange(range, withString: string)
-        if newText.length > 0{
-           doneButton.enabled = true
-        }else{
-        
-            doneButton.enabled = false
-        }
-        
+        doneButton.enabled = (newText.length > 0)
         return true
     }
     
