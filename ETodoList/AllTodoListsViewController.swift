@@ -8,9 +8,8 @@
 
 import UIKit
 
-class AllTodoListsViewController: UITableViewController, AllListDetailViewControllerDelegate {
+class AllTodoListsViewController: UITableViewController, AllListDetailViewControllerDelegate, UINavigationControllerDelegate {
     
-    //var Lists: Array<TodoList>
     var dataModel: DataModel!
     
     func allListDetailViewControllerDidCancel(controller: AllListDetailViewController) {
@@ -18,8 +17,6 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
     }
     
     func allListDetailViewController(controller: AllListDetailViewController,didFinishAddingTodoList todolist: TodoList) {
-//        let newIndex = Lists.count
-//        Lists.append(todolist)
         let newIndex = dataModel.lists.count
         dataModel.lists.append(todolist)
         let indexPath = NSIndexPath(forRow: newIndex, inSection: 0)
@@ -42,6 +39,16 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.delegate = self
+        let index = dataModel.indexOfSelectedTodolist
+        println("TodolistIndex = \(index)")
+        if index >= 0 && index < dataModel.lists.count {
+            let todolist = dataModel.lists[index]
+            performSegueWithIdentifier("ShowTodoList", sender: todolist)
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return dataModel.lists.count
     }
@@ -55,7 +62,6 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         var item = dataModel.lists[indexPath.row]
         cell!.textLabel!.text = item.name
         cell!.accessoryType = .DetailDisclosureButton
-//        configCheckMarkForCell(cell, withCheckItem: item)
         return cell!
     }
     
@@ -65,6 +71,7 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dataModel.indexOfSelectedTodolist = indexPath.row
         let listItem = dataModel.lists[indexPath.row]
         performSegueWithIdentifier("ShowTodoList", sender: listItem)
     }
@@ -94,4 +101,11 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         var indexPaths = [indexPath]
         tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
     }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if viewController === self {
+           dataModel.indexOfSelectedTodolist = -1
+        }
+    }
+
 }

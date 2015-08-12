@@ -11,8 +11,21 @@ import UIKit
 class DataModel {
     var lists = Array<TodoList>()
     
+    var indexOfSelectedTodolist: Int {
+        get {
+            return NSUserDefaults.standardUserDefaults().integerForKey("TodolistIndex")
+        }
+        
+        set {
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: "Todolistindex")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    
     init() {
         loadTodolists()
+        registerDefaults()
+        handleFirstTime()
     }
     
     func documentsDirectory() ->String {
@@ -43,6 +56,22 @@ class DataModel {
                 println("loadTodolists Data file path is \(dataFilePath())")
 
             }
+        }
+    }
+    
+    func registerDefaults() {
+        let dictionary = ["TodolistIndex": -1, "FirtTime": true]
+        NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)
+    }
+    
+    func handleFirstTime() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let firstTime = userDefaults.boolForKey("FirstTime")
+        if firstTime {
+            let todolist = TodoList(name: "my todo list")
+            lists.append(todolist)
+            indexOfSelectedTodolist = 0
+            userDefaults.setBool(false, forKey: "FirstTime")
         }
     }
 }
