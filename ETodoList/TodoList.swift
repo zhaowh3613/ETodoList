@@ -11,6 +11,7 @@ import UIKit
 class TodoList: NSObject, NSCoding {
     var name: String = ""
     var items = [TodolistItem]()
+    
     init(name: String) {
         self.name = name
        // self.item = item
@@ -25,6 +26,16 @@ class TodoList: NSObject, NSCoding {
     required init(coder aDecoder: NSCoder) {
         name = (aDecoder.decodeObjectForKey("Name") as? String)!
         items = aDecoder.decodeObjectForKey("Items") as! [TodolistItem]
+    }
+    
+    func countUncheckedItems() -> Int {
+        var count = 0
+        for item in items {
+            if !item.isChecked {
+                count += 1
+            }
+        }
+        return count
     }
     
 }

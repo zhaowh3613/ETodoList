@@ -55,13 +55,14 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("AllListItem") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("ETodoListsItem") as? UITableViewCell
         if cell == nil {
-          cell = UITableViewCell(style: .Default, reuseIdentifier: "AllListitem")
+          cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "ETodoListsItem")
         }
         var item = dataModel.lists[indexPath.row]
         cell!.textLabel!.text = item.name
         cell!.accessoryType = .DetailDisclosureButton
+        cell!.detailTextLabel!.text = "\(item.countUncheckedItems()) Remaining"
         return cell!
     }
     
