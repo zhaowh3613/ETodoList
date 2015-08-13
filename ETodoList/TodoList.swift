@@ -29,13 +29,14 @@ class TodoList: NSObject, NSCoding {
     }
     
     func countUncheckedItems() -> Int {
-        var count = 0
-        for item in items {
-            if !item.isChecked {
-                count += 1
-            }
-        }
-        return count
+//        var count = 0
+//        for item in items {
+//            if !item.isChecked {
+//                count += 1
+//            }
+//        }
+//        return count
+        return reduce(items, 0) { cnt, item in cnt + (item.isChecked ? 0 : 1)}
     }
     
 }
