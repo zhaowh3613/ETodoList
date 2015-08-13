@@ -11,21 +11,23 @@ import UIKit
 class TodoList: NSObject, NSCoding {
     var name: String = ""
     var items = [TodolistItem]()
-    
+    var iconName: String
     init(name: String) {
         self.name = name
-       // self.item = item
+        iconName = "No Icon"
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "Name")
         aCoder.encodeObject(items, forKey: "Items")
+        aCoder.encodeObject(iconName, forKey: "IconName")
     }
     
     required init(coder aDecoder: NSCoder) {
         name = (aDecoder.decodeObjectForKey("Name") as? String)!
         items = aDecoder.decodeObjectForKey("Items") as! [TodolistItem]
+        iconName = aDecoder.decodeObjectForKey("IconName") as! String
     }
     
     func countUncheckedItems() -> Int {

@@ -74,4 +74,8 @@ class DataModel {
             userDefaults.setBool(false, forKey: "FirstTime")
         }
     }
+    
+    func sortTodolists() {
+        
+    }
 }
