@@ -53,6 +53,14 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         return dataModel.lists.count
     }
     
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        let navigationController = storyboard!.instantiateViewControllerWithIdentifier("listDetailNavigationController") as! UINavigationController
+        let controller = navigationController.topViewController as! AllListDetailViewController
+        controller.delegate = self
+        var todolist = dataModel.lists[indexPath.row]
+        controller.allListToEdit = todolist
+        presentViewController(navigationController, animated: true, completion: nil)
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("ETodoListsItem") as? UITableViewCell
@@ -62,7 +70,6 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         var item = dataModel.lists[indexPath.row]
         cell!.textLabel!.text = item.name
         cell!.accessoryType = .DetailDisclosureButton
-        cell!.detailTextLabel!.text = "\(item.countUncheckedItems()) Remaining"
         return cell!
     }
     
@@ -86,14 +93,6 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
             let controller = navigationController.topViewController as! AllListDetailViewController
             controller.delegate = self
             controller.allListToEdit = nil
-        } else if segue.identifier == "EditItemSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let controller = navigationController.topViewController as! AllListDetailViewController
-            controller.delegate = self
-            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
-                var item = dataModel.lists[indexPath.row]
-                controller.allListToEdit = item
-            }
         }
     }
     
