@@ -27,6 +27,7 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
     }
     
     func allListDetailViewController(controller: AllListDetailViewController,didFinishEditingTodoList todolist: TodoList) {
+        //tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -37,6 +38,11 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
     
     override func viewDidLoad(){
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,9 +73,10 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         if cell == nil {
           cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "ETodoListsItem")
         }
-        var item = dataModel.lists[indexPath.row]
-        cell!.textLabel!.text = item.name
+        var todolist = dataModel.lists[indexPath.row]
+        cell!.textLabel!.text = todolist.name
         cell!.accessoryType = .DetailDisclosureButton
+        cell!.detailTextLabel!.text = "\(todolist.countUncheckedItems()) Remaining"
         return cell!
     }
     
