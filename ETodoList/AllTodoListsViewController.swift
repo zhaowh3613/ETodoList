@@ -76,7 +76,14 @@ class AllTodoListsViewController: UITableViewController, AllListDetailViewContro
         var todolist = dataModel.lists[indexPath.row]
         cell!.textLabel!.text = todolist.name
         cell!.accessoryType = .DetailDisclosureButton
-        cell!.detailTextLabel!.text = "\(todolist.countUncheckedItems()) Remaining"
+        let count = todolist.countUncheckedItems()
+        if todolist.items.count == 0 {
+            cell!.detailTextLabel!.text = "(No Items)"
+        } else if count == 0 {
+            cell!.detailTextLabel!.text = "All Done!"
+        } else {
+            cell!.detailTextLabel!.text = "\(todolist.countUncheckedItems()) Remaining"
+        }
         return cell!
     }
     
