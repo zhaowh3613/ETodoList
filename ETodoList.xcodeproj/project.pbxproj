@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF9599191B775AB8004F1F13 /* AllListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */; };
 		CF95991B1B7A4426004F1F13 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95991A1B7A4426004F1F13 /* DataModel.swift */; };
+		CF95991D1B7CE32D004F1F13 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95991C1B7CE32D004F1F13 /* IconPickerViewController.swift */; };
 		CFD8C7B71B1605C000D6D047 /* AllTodoListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */; };
 		CFD8C7B91B16A33200D6D047 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8C7B81B16A33200D6D047 /* TodoList.swift */; };
 		CFDC58BC1AFDADCC006D2D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC58BB1AFDADCC006D2D4F /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListDetailViewController.swift; sourceTree = "<group>"; };
 		CF95991A1B7A4426004F1F13 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CF95991C1B7CE32D004F1F13 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTodoListsViewController.swift; sourceTree = "<group>"; };
 		CFD8C7B81B16A33200D6D047 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		CFDC58B61AFDADCC006D2D4F /* ETodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				CFDC58E31AFF5EDF006D2D4F /* AddItemViewController.swift */,
 				CFD8C7B61B1605C000D6D047 /* AllTodoListsViewController.swift */,
 				CF9599181B775AB8004F1F13 /* AllListDetailViewController.swift */,
+				CF95991C1B7CE32D004F1F13 /* IconPickerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				CFD8C7B71B1605C000D6D047 /* AllTodoListsViewController.swift in Sources */,
 				CF9599191B775AB8004F1F13 /* AllListDetailViewController.swift in Sources */,
 				CFD8C7B91B16A33200D6D047 /* TodoList.swift in Sources */,
+				CF95991D1B7CE32D004F1F13 /* IconPickerViewController.swift in Sources */,
 				CFDC58E41AFF5EDF006D2D4F /* AddItemViewController.swift in Sources */,
 				CFDC58C11AFDADCC006D2D4F /* ETodoListViewController.swift in Sources */,
 				CFDC58E11AFEDF75006D2D4F /* TodoListItem.swift in Sources */,
