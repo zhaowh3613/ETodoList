@@ -22,7 +22,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     weak var delegate: AddItemViewControllerDelegate?
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var shouldRemindSwich: UISwitch!
+    @IBOutlet weak var swichControl: UISwitch!
     @IBOutlet weak var dueDateLabel: UILabel!
     
     var itemEdit: TodolistItem?
@@ -36,7 +36,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
             title = "EditItem"
             textField.text = item.title
             doneButton.enabled = true;
-            shouldRemindSwich.on = item.shouldRemind
+            swichControl.on = item.shouldRemind
             dueDate = item.dueDate
         }
         updateDueDateLabel()
@@ -48,16 +48,27 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func shouldRemindToggled(sender: UISwitch) {
+        textField.resignFirstResponder()
+        
+        if swichControl.on {
+            let notificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound, categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        }
+    }
+    
     @IBAction func SaveItem(sender: UIButton) {
         if let item = itemEdit {
             item.title = textField.text
             item.dueDate = dueDate
-            item.shouldRemind = shouldRemindSwich.on
+            item.shouldRemind = swichControl.on
+            item.scheduleNotification()
             delegate?.addItemViewController(self, didFinishEditingItem: item)
         } else {
             var newItem = TodolistItem(title: textField.text, isChecked: false)
             newItem.dueDate = dueDate
-            newItem.shouldRemind = shouldRemindSwich.on
+            newItem.shouldRemind = swichControl.on
+            newItem.scheduleNotification()  
             delegate?.addItemViewController(self, didFinishAddingItem: newItem)
             dismissViewControllerAnimated(true, completion: nil)
         }

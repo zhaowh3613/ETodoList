@@ -106,6 +106,9 @@
                                                         <constraint firstAttribute="width" constant="50" id="0dE-AM-ICK"/>
                                                         <constraint firstAttribute="height" constant="31" id="XCP-AL-fTG"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="ich-x2-cDx" eventType="valueChanged" id="e4R-PR-yzM"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiZ-Jb-4sB">
                                                     <rect key="frame" x="15" y="11" width="88" height="21"/>
@@ -179,7 +182,7 @@
                     <connections>
                         <outlet property="doneButton" destination="DWx-M9-8G1" id="izR-CY-gUY"/>
                         <outlet property="dueDateLabel" destination="Mwc-kq-EdR" id="n8x-kZ-G3h"/>
-                        <outlet property="shouldRemindSwich" destination="Vkw-Wn-w4x" id="XT2-fS-Hqj"/>
+                        <outlet property="swichControl" destination="Vkw-Wn-w4x" id="0oL-VI-xHd"/>
                         <outlet property="textField" destination="kYa-L7-yIp" id="1VU-MN-YBD"/>
                     </connections>
                 </tableViewController>
