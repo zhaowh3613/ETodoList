@@ -60,7 +60,7 @@ class DataModel {
     }
     
     func registerDefaults() {
-        let dictionary = ["TodolistIndex": -1, "FirtTime": true]
+        let dictionary = ["TodolistIndex": -1, "FirtTime": true, "TodilistItemID": 0]
         NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)
     }
     
@@ -77,5 +77,13 @@ class DataModel {
     
     func sortTodolists() {
         
+    }
+    
+    class func nextTodolistItemID() -> Int {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let itemID = userDefaults.integerForKey("TodolistItemID")
+        userDefaults.setInteger(itemID + 1, forKey: "TodolistItemID")
+        userDefaults.synchronize()
+        return itemID
     }
 }

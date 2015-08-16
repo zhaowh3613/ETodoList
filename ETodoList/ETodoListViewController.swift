@@ -83,7 +83,6 @@ class ETodoListViewController: UITableViewController, AddItemViewControllerDeleg
         var titleLabel = cell.viewWithTag(1) as! UILabel
         titleLabel.attributedText = attributedText
         //saveListItems()
-
     }
     
     @IBAction func AddItem(sender: UIBarButtonItem) {
